@@ -714,9 +714,8 @@ footer p {
    =================================== */
 
 @media (max-width: 768px) {
-    /* 1. Fix the Header/Name overlap */
     .hero h1 {
-        font-size: 1.8rem; /* Smaller size so it doesn't break awkwardly */
+        font-size: 1.8rem; 
         line-height: 1.2;
         text-align: center;
     }
@@ -727,7 +726,6 @@ footer p {
         margin-bottom: 1.5rem;
     }
 
-    /* 2. Stack the layout vertically */
     .hero-container, .about-content {
         display: flex;
         flex-direction: column;
@@ -736,19 +734,19 @@ footer p {
         gap: 1.5rem;
     }
 
-    /* 3. Make the image responsive instead of fixed px */
+    
     .about-profile-image {
-        width: 80%;       /* Use percentage so it scales with the phone width */
-        max-width: 250px; /* Limits how big it gets on tablets */
-        height: auto;     /* Maintains aspect ratio */
+        width: 80%;       
+        max-width: 250px; 
+        height: auto;     
         margin: 0 auto;
     }
 
-    /* 4. Fix the cramped navigation */
+    
     nav ul {
         gap: 0.5rem;
         font-size: 0.8rem;
-        flex-wrap: wrap; /* Allows menu items to wrap if screen is very thin */
+        flex-wrap: wrap; 
         justify-content: center;
     }
 
@@ -758,7 +756,7 @@ footer p {
     }
 
     .stats {
-        grid-template-columns: 1fr; /* Stacking stats looks better on narrow phones */
+        grid-template-columns: 1fr; 
         gap: 1rem;
     }
 
@@ -768,6 +766,11 @@ footer p {
 
     .timeline {
         padding-left: 1rem;
+    }
+
+    .timeline-date {
+    color: var(--text-gray);
+    font-size: 0.9rem;
     }
 
     .timeline-item {
