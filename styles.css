@@ -753,8 +753,8 @@ footer p {
     }
 
     nav .logo {
-        width: 35px;
-        height: 35px;
+        width: 20%;
+        height: auto;
     }
 
     .stats {
