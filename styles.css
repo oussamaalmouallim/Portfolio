@@ -712,134 +712,25 @@ footer p {
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */
-.nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 26px;
-    height: 18px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1100;
-}
-
-.nav-toggle span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background: var(--text-dark);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Animated X when open */
-.nav-toggle.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.nav-toggle.open span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-.nav-toggle.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
 @media (max-width: 768px) {
-    /* --- Navigation --- */
-    .nav-toggle {
-        display: flex;
-    }
-
-    nav ul {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 70%;
-        max-width: 280px;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        font-size: 1.1rem;
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-        transform: translateX(100%);
-        transition: transform 0.35s ease;
-        z-index: 1050;
-    }
-
-    nav ul.open {
-        transform: translateX(0);
-    }
-
-    /* Overlay behind menu */
-    .nav-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 1040;
-    }
-
-    .nav-overlay.open {
-        display: block;
-    }
-
-    nav .logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* --- Hero --- */
-    .hero {
-        padding-top: 70px;
-        padding-bottom: 2rem;
-        min-height: 100svh;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-        gap: 0;
-        text-align: center;
-        padding: 0 16px;
-    }
-
-    .hero-text {
-        text-align: center;
-        order: 2;
-        padding-bottom: 2rem;
-    }
-
     .hero h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-        margin-bottom: 0.75rem;
+        font-size: 1.5rem;
     }
 
     .hero .title {
         font-size: 1rem;
-        margin-bottom: 0.75rem;
     }
 
-    .hero .subtitle {
-        font-size: 0.95rem;
-        max-width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    .cta-buttons {
-        justify-content: center;
-        gap: 0.75rem;
-    }
-
-    .btn {
-        padding: 0.65rem 1.5rem;
+    nav ul {
+        gap: 1rem;
         font-size: 0.9rem;
     }
+
+    nav .logo {
+        width: 20px;
+        height: 20px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -851,7 +742,7 @@ footer p {
 
     .about-profile-image {
         width: 280px;
-        height: 440px;
+        height: 400px;
     }
 
     .stats {
