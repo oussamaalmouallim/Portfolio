@@ -712,41 +712,54 @@ footer p {
 /* ===================================
    RESPONSIVE DESIGN
    =================================== */
+
 @media (max-width: 768px) {
+    /* 1. Fix the Header/Name overlap */
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem; /* Smaller size so it doesn't break awkwardly */
+        line-height: 1.2;
+        text-align: center;
     }
 
     .hero .title {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
+    /* 2. Stack the layout vertically */
+    .hero-container, .about-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    /* 3. Make the image responsive instead of fixed px */
+    .about-profile-image {
+        width: 80%;       /* Use percentage so it scales with the phone width */
+        max-width: 250px; /* Limits how big it gets on tablets */
+        height: auto;     /* Maintains aspect ratio */
+        margin: 0 auto;
+    }
+
+    /* 4. Fix the cramped navigation */
     nav ul {
-        gap: 1rem;
-        font-size: 0.9rem;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap; /* Allows menu items to wrap if screen is very thin */
+        justify-content: center;
     }
 
     nav .logo {
-        width: 20px;
-        height: 20px;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .about-image-container {
-        order: -1;
-        margin-bottom: 2rem;
-    }
-
-    .about-profile-image {
-        width: 280px;
-        height: 400px;
+        width: 35px;
+        height: 35px;
     }
 
     .stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr; /* Stacking stats looks better on narrow phones */
+        gap: 1rem;
     }
 
     .section-title {
