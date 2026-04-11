@@ -179,3 +179,127 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+/* ── 8. CONTACT FORM — MAIL MODAL ── */
+(function () {
+  const modal    = document.getElementById('mail-modal');
+  const card     = document.getElementById('mail-card');
+  const backdrop = document.getElementById('mail-backdrop');
+
+  const btnSubmit  = document.getElementById('contact-submit');
+  const btnClose   = document.getElementById('modal-close');
+  const btnCancel  = document.getElementById('modal-cancel');
+  const btnConfirm = document.getElementById('modal-confirm');
+
+  const inName    = document.getElementById('contact-name');
+  const inEmail   = document.getElementById('contact-email');
+  const inProject = document.getElementById('contact-project');
+
+  // Preview elements
+  const pvFrom    = document.getElementById('preview-from');
+  const pvSubject = document.getElementById('preview-subject');
+  const pvName    = document.getElementById('preview-name-block');
+  const pvEmail   = document.getElementById('preview-email-block');
+  const pvProject = document.getElementById('preview-project-block');
+  const pvSignoff = document.getElementById('preview-signoff');
+
+  function openModal() {
+    const name    = (inName    ? inName.value.trim()    : '') || 'Inconnu';
+    const email   = (inEmail   ? inEmail.value.trim()   : '') || 'non renseigné';
+    const project = (inProject ? inProject.value.trim() : '') || 'non renseigné';
+
+    // Populate preview
+    pvFrom.textContent    = name + (email !== 'non renseigné' ? ' <' + email + '>' : '');
+    pvSubject.textContent = 'Projet : ' + project.substring(0, 80) + (project.length > 80 ? '…' : '');
+    pvName.textContent    = name;
+    pvEmail.textContent   = email;
+    pvProject.textContent = project;
+    pvSignoff.textContent = name;
+
+    // Show modal
+    modal.style.display = 'flex';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        card.style.transform = 'translateY(0) scale(1)';
+        card.style.opacity   = '1';
+      });
+    });
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    card.style.transform = 'translateY(30px) scale(0.97)';
+    card.style.opacity   = '0';
+    setTimeout(() => {
+      modal.style.display  = 'none';
+      document.body.style.overflow = '';
+    }, 420);
+  }
+
+  function sendMail() {
+    const name    = (inName    ? inName.value.trim()    : '') || 'Inconnu';
+    const email   = (inEmail   ? inEmail.value.trim()   : '') || '';
+    const project = (inProject ? inProject.value.trim() : '') || 'non renseigné';
+
+    const subject = encodeURIComponent('Projet : ' + project.substring(0, 80));
+
+    const body = encodeURIComponent(
+      'Bonjour Oussama,\n\n' +
+      'Je suis ' + name + (email ? ' (' + email + ')' : '') + '.\n\n' +
+      '── Détails du projet ──\n' +
+      project + '\n\n' +
+      'Dans l\'attente de votre retour,\n' +
+      name + '\n\n' +
+      '────────────────────────\n' +
+      'Message envoyé via oussama.dev'
+    );
+
+    window.location.href =
+      'mailto:oussamaknouni39@gmail.com?subject=' + subject + '&body=' + body;
+
+    closeModal();
+
+    // Toast success
+    showToast();
+  }
+
+  function showToast() {
+    const toast = document.createElement('div');
+    toast.innerHTML = '<span class="material-symbols-outlined" style="font-size:1.1rem;color:#745b00;">check_circle</span><span style="font-size:0.82rem;font-weight:600;color:#1b1c1a;">Message prêt à envoyer !</span>';
+    Object.assign(toast.style, {
+      position: 'fixed', bottom: '2rem', left: '50%',
+      transform: 'translateX(-50%) translateY(20px)',
+      background: '#ffe08d', borderRadius: '50px',
+      padding: '0.75rem 1.5rem', display: 'flex', alignItems: 'center',
+      gap: '0.5rem', boxShadow: '0 8px 32px rgba(116,91,0,0.2)',
+      zIndex: '99999', opacity: '0',
+      transition: 'all 0.4s cubic-bezier(0.22,1,0.36,1)',
+      fontFamily: '\'Plus Jakarta Sans\', sans-serif',
+      border: '1px solid rgba(116,91,0,0.2)'
+    });
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(-50%) translateY(0)';
+      });
+    });
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(20px)';
+      setTimeout(() => toast.remove(), 400);
+    }, 3500);
+  }
+
+  // Events
+  if (btnSubmit)  btnSubmit.addEventListener('click',   openModal);
+  if (btnClose)   btnClose.addEventListener('click',    closeModal);
+  if (btnCancel)  btnCancel.addEventListener('click',   closeModal);
+  if (btnConfirm) btnConfirm.addEventListener('click',  sendMail);
+  if (backdrop)   backdrop.addEventListener('click',    closeModal);
+
+  // ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal && modal.style.display !== 'none') closeModal();
+  });
+})();

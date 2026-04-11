@@ -107,6 +107,7 @@
 
     <!-- TEXT -->
     <div class="w-full md:w-1/2 z-10 reveal-left">
+      <span class="inline-block py-1 px-4 rounded-full bg-secondary-container text-on-secondary-container text-[10px] uppercase tracking-[0.2em] font-bold mb-6">Disponible pour des projets</span>
       <h1 class="text-5xl md:text-7xl font-bold tracking-tighter leading-[1.1] text-on-surface mb-6">
         Oussama <br/> Al Mouallim <br/> <span class="text-primary italic">El Kanouni</span>
       </h1>
@@ -180,9 +181,9 @@
           Bas&eacute; &agrave; Casablanca, je combine d&eacute;veloppement full-stack (React &middot; Node.js &middot; Python), cloud computing (AWS &middot; GCP), automatisation intelligente (n8n &middot; CI/CD) et int&eacute;gration de mod&egrave;les AI (Claude &middot; Ollama). Mon motto ? Livrer de l&apos;excellence technique qui se ressent d&egrave;s la premi&egrave;re interaction.
         </p>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
-          <div class="reveal"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="1">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Ans d&apos;exp&eacute;rience</p></div>
+          <div class="reveal"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="5">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Ans d&apos;exp&eacute;rience</p></div>
           <div class="reveal delay-100"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="5">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Entreprises</p></div>
-          <div class="reveal delay-200"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="10">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Projets livr&eacute;s</p></div>
+          <div class="reveal delay-200"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="20">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Projets livr&eacute;s</p></div>
           <div class="reveal delay-300"><p class="text-4xl font-bold text-primary mb-2 stat-number" data-target="3">0</p><p class="text-[10px] uppercase tracking-widest font-bold opacity-60">Langues parl&eacute;es</p></div>
         </div>
       </div>
@@ -491,7 +492,7 @@
               <div class="w-16 h-16 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center group-hover:bg-primary-fixed-dim group-hover:text-on-primary-fixed transition-all"><span class="material-symbols-outlined">mail</span></div>
               <div><p class="text-xs uppercase tracking-widest font-bold opacity-50 mb-1">Email</p><p class="text-xl font-medium">oussamaknouni39@gmail.com</p></div>
             </a>
-            <a class="flex items-center gap-6 group" href="https://www.linkedin.com/in/oussama-al-mouallim-el-kanouni-0064a9224/" target="_blank">
+            <a class="flex items-center gap-6 group" href="https://linkedin.com" target="_blank">
               <div class="w-16 h-16 rounded-full border border-primary-fixed-dim/30 flex items-center justify-center group-hover:bg-primary-fixed-dim group-hover:text-on-primary-fixed transition-all"><span class="material-symbols-outlined">share</span></div>
               <div><p class="text-xs uppercase tracking-widest font-bold opacity-50 mb-1">LinkedIn</p><p class="text-xl font-medium">linkedin.com/in/oussama-amek</p></div>
             </a>
@@ -505,17 +506,17 @@
           <div class="space-y-8">
             <div class="space-y-2">
               <label class="text-xs uppercase tracking-widest font-bold opacity-70">Nom</label>
-              <input class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-primary-fixed-dim transition-colors text-xl text-surface" placeholder="Votre nom" type="text"/>
+              <input class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-primary-fixed-dim transition-colors text-xl text-surface" id="contact-name" placeholder="Votre nom" type="text"/>
             </div>
             <div class="space-y-2">
               <label class="text-xs uppercase tracking-widest font-bold opacity-70">Email</label>
-              <input class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-primary-fixed-dim transition-colors text-xl text-surface" placeholder="votre@email.com" type="email"/>
+              <input class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-primary-fixed-dim transition-colors text-xl text-surface" id="contact-email" placeholder="votre@email.com" type="email"/>
             </div>
             <div class="space-y-2">
               <label class="text-xs uppercase tracking-widest font-bold opacity-70">Votre projet</label>
               <textarea class="w-full bg-transparent border-b border-white/20 py-4 focus:outline-none focus:border-primary-fixed-dim transition-colors text-xl resize-none text-surface" placeholder="Parlez-moi de votre id&eacute;e..." rows="4"></textarea>
             </div>
-            <button class="w-full py-5 bg-primary-fixed text-on-primary-fixed font-bold rounded-full hover:opacity-90 transition-opacity" type="button">Envoyer le message</button>
+            <button class="w-full py-5 bg-primary-fixed text-on-primary-fixed font-bold rounded-full hover:opacity-90 transition-opacity" type="button"id="contact-submit">Envoyer le message</button>
           </div>
         </div>
       </div>
@@ -528,12 +529,72 @@
   <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
     <div class="text-stone-500 text-xs uppercase tracking-widest">&copy; 2025 Oussama Al Mouallim El Kanouni &middot; Casablanca, Maroc</div>
     <div class="flex gap-10">
-      <a class="text-stone-500 text-xs uppercase tracking-widest hover:text-amber-500 transition-all" href="https://github.com/oussamaalmouallim/OUSSAMA-AL-MOUALLIM-EL-KA">GitHub</a>
-      <a class="text-stone-500 text-xs uppercase tracking-widest hover:text-amber-500 transition-all" href="https://www.linkedin.com/in/oussama-al-mouallim-el-kanouni-0064a9224/" target="_blank">LinkedIn</a>
+      <a class="text-stone-500 text-xs uppercase tracking-widest hover:text-amber-500 transition-all" href="#">GitHub</a>
+      <a class="text-stone-500 text-xs uppercase tracking-widest hover:text-amber-500 transition-all" href="https://linkedin.com" target="_blank">LinkedIn</a>
       <a class="text-stone-500 text-xs uppercase tracking-widest hover:text-amber-500 transition-all" href="mailto:oussamaknouni39@gmail.com">Email</a>
     </div>
   </div>
 </footer>
+
+<!-- ── MAIL PREVIEW MODAL ── -->
+<div id="mail-modal" style="display:none;position:fixed;inset:0;z-index:9999;align-items:center;justify-content:center;padding:1.5rem;">
+  <div id="mail-backdrop" style="position:absolute;inset:0;background:rgba(27,28,26,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);"></div>
+  <div id="mail-card" style="position:relative;width:100%;max-width:620px;max-height:90vh;overflow-y:auto;background:#fbf9f6;border-radius:24px;box-shadow:0 40px 100px rgba(116,91,0,0.18),0 8px 32px rgba(0,0,0,0.1);border:1px solid rgba(198,164,63,0.2);transform:translateY(30px) scale(0.97);opacity:0;transition:transform 0.45s cubic-bezier(0.22,1,0.36,1),opacity 0.45s cubic-bezier(0.22,1,0.36,1);">
+    <div style="padding:1.75rem 2rem 1.25rem;border-bottom:1px solid rgba(198,164,63,0.15);display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:0.75rem;">
+        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#745b00,#c6a43f);display:flex;align-items:center;justify-content:center;">
+          <span class="material-symbols-outlined" style="color:white;font-size:1.1rem;">mail</span>
+        </div>
+        <div>
+          <p style="font-weight:700;font-size:0.85rem;color:#1b1c1a;letter-spacing:-0.01em;margin:0;">Aper&#231;u du message</p>
+          <p style="font-size:0.7rem;color:#6e5b42;letter-spacing:0.04em;text-transform:uppercase;font-weight:600;margin:0;">V&#233;rifiez avant d'envoyer</p>
+        </div>
+      </div>
+      <button id="modal-close" style="width:36px;height:36px;border-radius:50%;border:1px solid rgba(198,164,63,0.3);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;" onmouseover="this.style.background='rgba(198,164,63,0.15)'" onmouseout="this.style.background='transparent'">
+        <span class="material-symbols-outlined" style="font-size:1.1rem;color:#4d4636;">close</span>
+      </button>
+    </div>
+    <div style="padding:1.5rem 2rem;">
+      <div style="background:#f5f3f0;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;font-size:0.78rem;color:#4d4636;line-height:1.8;">
+        <div style="display:flex;gap:0.5rem;"><span style="font-weight:700;color:#745b00;min-width:48px;">De&#160;:</span><span id="preview-from">&#8212;</span></div>
+        <div style="display:flex;gap:0.5rem;"><span style="font-weight:700;color:#745b00;min-width:48px;">&#192;&#160;:</span><span>oussamaknouni39@gmail.com</span></div>
+        <div style="display:flex;gap:0.5rem;"><span style="font-weight:700;color:#745b00;min-width:48px;">Objet&#160;:</span><span id="preview-subject" style="font-weight:600;color:#1b1c1a;">&#8212;</span></div>
+      </div>
+      <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(198,164,63,0.2);box-shadow:0 8px 32px rgba(116,91,0,0.06);">
+        <div style="background:linear-gradient(135deg,#745b00 0%,#c6a43f 100%);padding:2rem;text-align:center;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.08);"></div>
+          <div style="position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:white;letter-spacing:-0.03em;margin:0 0 0.25rem;">OUSSAMA.DEV</p>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.7rem;color:rgba(255,255,255,0.75);letter-spacing:0.15em;text-transform:uppercase;margin:0;">Al Mouallim El Kanouni &nbsp;&#183;&nbsp; Cloud &amp; IoT Engineer</p>
+        </div>
+        <div style="background:#ffffff;padding:2rem 2rem 1.5rem;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.95rem;color:#1b1c1a;font-weight:600;margin:0 0 1.25rem;">Bonjour Oussama,</p>
+          <div style="background:linear-gradient(135deg,#fbf9f6,#f5f3f0);border-left:3px solid #c6a43f;border-radius:0 12px 12px 0;padding:1rem 1.25rem;margin-bottom:1.25rem;">
+            <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;color:#745b00;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.4rem;">Exp&#233;diteur</p>
+            <p id="preview-name-block" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;color:#1b1c1a;font-weight:700;margin:0 0 0.2rem;">&#8212;</p>
+            <p id="preview-email-block" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.82rem;color:#6e5b42;margin:0;">&#8212;</p>
+          </div>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.75rem;color:#745b00;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 0.6rem;">D&#233;tails du projet</p>
+          <div id="preview-project-block" style="background:#f5f3f0;border-radius:12px;padding:1.25rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;color:#4d4636;line-height:1.7;margin-bottom:1.5rem;white-space:pre-wrap;">&#8212;</div>
+          <div style="height:1px;background:linear-gradient(to right,transparent,rgba(198,164,63,0.3),transparent);margin:0 0 1.25rem;"></div>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.88rem;color:#6e5b42;margin:0 0 0.3rem;">Dans l'attente de votre retour,</p>
+          <p id="preview-signoff" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.92rem;color:#1b1c1a;font-weight:700;margin:0;">&#8212;</p>
+        </div>
+        <div style="background:#1b1c1a;padding:1.25rem 2rem;text-align:center;">
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.68rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 0.4rem;">Message envoy&#233; via oussama.dev</p>
+          <p style="font-family:'Plus Jakarta Sans',sans-serif;font-size:0.68rem;color:rgba(198,164,63,0.6);margin:0;">oussamaknouni39@gmail.com &nbsp;&#183;&nbsp; Casablanca, Maroc</p>
+        </div>
+      </div>
+    </div>
+    <div style="padding:1.25rem 2rem 1.75rem;display:flex;gap:0.75rem;">
+      <button id="modal-cancel" style="flex:1;padding:0.9rem;border-radius:50px;border:1px solid rgba(198,164,63,0.35);background:transparent;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:600;color:#4d4636;transition:all 0.2s;" onmouseover="this.style.background='rgba(198,164,63,0.1)'" onmouseout="this.style.background='transparent'">Modifier</button>
+      <button id="modal-confirm" style="flex:2;padding:0.9rem;border-radius:50px;border:none;background:linear-gradient(135deg,#745b00,#c6a43f);cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:700;color:white;display:flex;align-items:center;justify-content:center;gap:0.5rem;box-shadow:0 8px 24px rgba(116,91,0,0.25);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+        <span class="material-symbols-outlined" style="font-size:1rem;">send</span>
+        Confirmer &amp; Envoyer
+      </button>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
